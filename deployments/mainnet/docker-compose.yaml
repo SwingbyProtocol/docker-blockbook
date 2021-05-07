@@ -110,6 +110,8 @@ services:
     networks:
       infura:
         ipv4_address: 10.2.0.111
+    # Use at most 50% of available CPU resources to not kill the host.
+    cpu_percent: 50
 
   bb_eth:
     container_name: bb_eth_mainnet
@@ -127,6 +129,8 @@ services:
     networks:
       infura:
         ipv4_address: 10.2.0.112
+    # Use at most 50% of available CPU resources to not kill the host.
+    cpu_percent: 50
 
   bb_bsc:
     container_name: bb_bsc_mainnet
@@ -144,6 +148,8 @@ services:
     networks:
       infura:
         ipv4_address: 10.2.0.113
+    # Use at most 50% of available CPU resources to not kill the host.
+    cpu_percent: 50
 
 networks:
   infura:
