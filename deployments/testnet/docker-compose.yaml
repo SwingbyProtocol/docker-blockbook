@@ -30,6 +30,7 @@ services:
       --maxpeers=200
       --syncmode=snap
       --gpo.percentile=75
+      --override.terminaltotaldifficulty "100000000000000000000000"
       --goerli
     networks:
       infura:
