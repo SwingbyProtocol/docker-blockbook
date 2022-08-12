@@ -28,7 +28,7 @@ services:
       --nousb
       --cache=8192
       --maxpeers=200
-      --syncmode=fast
+      --syncmode=snap
       --gpo.percentile=75
       --goerli
     networks:
