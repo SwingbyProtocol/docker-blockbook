@@ -122,8 +122,8 @@ services:
         max-file: "5"
         max-size: "10m"
     ports:
-      - 9031:9030
-      - 9131:9130
+      - 9030:9030
+      - 9130:9130
     volumes:
       - ${DIR}/testnet/bb_eth:/opt/coins/blockbook/ethereum_testnet_goerli/data
     networks:
