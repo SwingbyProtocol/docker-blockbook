@@ -8,6 +8,6 @@ cd /opt/coins/blockbook/ethereum_testnet_goerli/
     -public=:9130 \
     -resyncindexperiod=5000 \
     -resyncmempoolperiod=5000 \
-    -blockheight=4015121 \
+    -blockheight=7403478 \
     -workers=1 \
     -logtostderr
