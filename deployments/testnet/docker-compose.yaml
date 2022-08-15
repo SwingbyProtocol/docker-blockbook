@@ -22,6 +22,8 @@ services:
       --http.addr "0.0.0.0" 
       --http.vhosts "*"
       --http.corsdomain "*" 
+      --http.api="db,eth,net,web3,personal"
+      --allow-insecure-unlock
       --ws 
       --ws.addr "0.0.0.0" 
       --ws.origins "*" 
@@ -35,7 +37,31 @@ services:
     networks:
       infura:
         ipv4_address: 10.2.0.101
-
+  prysm:
+    container_name: beacon-chain
+    image: gcr.io/prysmaticlabs/prysm/beacon-chain:v2.1.4-rc.0
+    restart: always
+    hostname: beacon-chain
+    depends_on:
+            - geth
+    command: >
+      --datadir="/home/prysm"
+      --accept-terms-of-use=true
+      --http-web3provider="http://geth:8545"
+      --rpc-host="0.0.0.0"
+      --p2p-host-ip=""
+      --p2p-host-dns=""
+      --p2p-tcp-port=13000
+      --prater
+    ports:
+      - 127.0.0.1:4000:4000
+      - 13000:13000/tcp
+      - 12000:12000/udp
+    volumes:
+      - ${DIR}/testnet/prysm:/home/prysm
+    networks:
+      infura:
+        ipv4_address: 10.2.0.104
   bitcoind:
     container_name: bitcoind_testnet
     restart: unless-stopped
@@ -63,7 +89,6 @@ services:
     networks:
       infura:
         ipv4_address: 10.2.0.102
-
   bsc:
     container_name: bsc_testnet
     restart: unless-stopped
