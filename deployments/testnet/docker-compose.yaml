@@ -14,8 +14,6 @@ services:
     # - 8546:8546
       - 30303:30303
       - 30303:30303/udp
-    volumes:
-      - ${DIR}/testnet/geth:/home/geth
     command: >
       --datadir /home/geth 
       --http 
@@ -33,7 +31,12 @@ services:
       --syncmode=snap
       --gpo.percentile=75
       --override.terminaltotaldifficulty "100000000000000000000000"
+      --authrpc.vhosts="*"
+      --authrpc.jwtsecret=/home/jwtsecret_goerli.hex
       --goerli
+    volumes:
+      - ${DIR}/testnet/geth:/home/geth
+      - ./jwtsecret_goerli.hex:/home/jwtsecret_goerli.hex:ro
     networks:
       infura:
         ipv4_address: 10.2.0.101
@@ -52,13 +55,20 @@ services:
       --p2p-host-ip=""
       --p2p-host-dns=""
       --p2p-tcp-port=13000
-      --prater
+      --jwt-secret=/home/jwtsecret_goerli.hex
+      --genesis-state=/home/genesis_goerli.ssz
+      --grpc-gateway-host="0.0.0.0"
+      --grpc-gateway-port=3500
+      --goerli
     ports:
-      - 127.0.0.1:4000:4000
+      - 4000:4000
+      - 3500:3500
       - 13000:13000/tcp
       - 12000:12000/udp
     volumes:
       - ${DIR}/testnet/prysm:/home/prysm
+      - ./jwtsecret_goerli.hex:/home/jwtsecret_goerli.hex:ro
+      - ./genesis_goerli.ssz:/home/genesis_goerli.ssz:ro
     networks:
       infura:
         ipv4_address: 10.2.0.104
