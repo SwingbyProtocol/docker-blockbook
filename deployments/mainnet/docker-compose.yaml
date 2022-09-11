@@ -4,35 +4,76 @@ services:
   geth:
     container_name: geth
     restart: unless-stopped
-    image: ethereum/client-go:v1.10.21
+    image: ethereum/client-go:v1.10.23
     logging:
       options:
         max-file: "5"
         max-size: "10m"
     ports:
       - 8545:8545
-      - 8546:8546
+      - 8551:8551
+      # - 8546:8546
       - 30303:30303
       - 30303:30303/udp
-    volumes:
-      - ${DIR}/mainnet/geth:/home/geth
     command: >
       --datadir /home/geth
       --http
       --http.addr "0.0.0.0"
       --http.vhosts "*"
+      --http.corsdomain "*"
+      --http.api="db,eth,net,web3,personal"
+      --allow-insecure-unlock
       --ws
       --ws.addr "0.0.0.0"
       --http.corsdomain "*"
       --ws.origins "*"
       --nousb
-      --cache=4096
+      --cache=8192
       --maxpeers=200
       --syncmode=snap
       --gpo.percentile=75
+      --authrpc.vhosts="*"
+      --authrpc.addr="0.0.0.0"
+      --authrpc.port=8551
+      --authrpc.jwtsecret=/home/jwtsecret_mainnet.hex
+    volumes:
+      - ${DIR}/mainnet/geth:/home/geth
+      - ./jwtsecret_mainnet.hex:/home/jwtsecret_mainnet.hex:ro
     networks:
       infura:
         ipv4_address: 10.2.0.101
+
+  prysm:
+    container_name: beacon-chain
+    image: gcr.io/prysmaticlabs/prysm/beacon-chain:v3.1.1
+    restart: always
+    hostname: beacon-chain
+    depends_on:
+            - geth
+    command: >
+      --datadir="/home/prysm"
+      --accept-terms-of-use=true
+      --http-web3provider="http://geth:8551"
+      --rpc-host="0.0.0.0"
+      --p2p-host-ip=""
+      --p2p-host-dns=""
+      --p2p-tcp-port=13000
+      --jwt-secret=/home/jwtsecret_mainnet.hex
+      --grpc-gateway-host="0.0.0.0"
+      --grpc-gateway-port=3500
+      --mainnet
+    ports:
+      - 4000:4000
+      - 3500:3500
+      - 13000:13000/tcp
+      - 12000:12000/udp
+    volumes:
+      - ${DIR}/mainnet/prysm:/home/prysm
+      - ./jwtsecret_mainnet.hex:/home/jwtsecret_mainnet.hex:ro
+      - ./jwtsecret_mainnet.ssz:/home/jwtsecret_mainnet.ssz:ro
+    networks:
+      infura:
+        ipv4_address: 10.2.0.104
 
   bitcoind:
     container_name: bitcoind
