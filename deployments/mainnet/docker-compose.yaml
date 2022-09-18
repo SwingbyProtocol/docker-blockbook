@@ -16,6 +16,7 @@ services:
     volumes:
       - ${DIR}/mainnet/eth2:/data
     command: >
+      --accept-terms-of-use
       --datadir=/data
       --jwt-secret=/data/jwtsecret
       --rpc-host=0.0.0.0
