@@ -16,12 +16,14 @@ services:
     volumes:
       - ${DIR}/mainnet/eth2:/data
     command: >
-      --datadir=/data \
-      --jwt-secret=0x4bf1ffd9d1fd5e5f4e797fd9d7715c2d083b66df7c84a28586c440b88169c2c7 \
-      --rpc-host=0.0.0.0 \
-      --grpc-gateway-host=0.0.0.0 \
-      --monitoring-host=0.0.0.0 \
+      --datadir=/data
+      --jwt-secret=0x4bf1ffd9d1fd5e5f4e797fd9d7715c2d083b66df7c84a28586c440b88169c2c7
+      --rpc-host=0.0.0.0
+      --grpc-gateway-host=0.0.0.0
+      --monitoring-host=0.0.0.0
       --execution-endpoint=10.2.0.101:8551
+      --checkpoint-sync-url=https://checkpointz.pietjepuk.net
+      --genesis-beacon-api-url=https://checkpointz.pietjepuk.net
     networks:
       infura:
         ipv4_address: 10.2.0.104
