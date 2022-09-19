@@ -4,7 +4,7 @@ services:
   geth:
     container_name: geth
     restart: unless-stopped
-    image: ethereum/client-go:v1.10.23
+    image: ethereum/client-go:v1.10.25
     logging:
       options:
         max-file: "5"
@@ -36,6 +36,7 @@ services:
       --authrpc.addr="0.0.0.0"
       --authrpc.port=8551
       --authrpc.jwtsecret=/home/jwtsecret_mainnet.hex
+      --mainnet
     volumes:
       - ${DIR}/mainnet/geth:/home/geth
       - ./jwtsecret_mainnet.hex:/home/jwtsecret_mainnet.hex:ro
