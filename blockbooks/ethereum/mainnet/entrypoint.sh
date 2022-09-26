@@ -8,6 +8,6 @@ cd /opt/coins/blockbook/ethereum/
     -public=:9130 \
     -resyncindexperiod=5000 \
     -resyncmempoolperiod=5000 \
-    -blockheight=15340148 \
+    -blockheight=15614764 \
     -workers=1 \
     -logtostderr
