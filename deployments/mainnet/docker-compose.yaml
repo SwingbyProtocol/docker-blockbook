@@ -1,10 +1,38 @@
 version: "3.7"
 
 services:
+  prysm:
+    container_name: prysm
+    restart: unless-stopped
+    image: gcr.io/prysmaticlabs/prysm/beacon-chain:stable
+    logging:
+      options:
+        max-file: "5"
+        max-size: "10m"
+    ports:
+      - 4000:4000
+      - 13000:13000
+      - 12000:12000/udp
+    volumes:
+      - ${DIR}/mainnet/eth2:/data
+    command: >
+      --accept-terms-of-use
+      --datadir=/data
+      --jwt-secret=/data/jwtsecret
+      --rpc-host=0.0.0.0
+      --grpc-gateway-host=0.0.0.0
+      --monitoring-host=0.0.0.0
+      --execution-endpoint=http://10.2.0.101:8551
+      --checkpoint-sync-url=https://checkpointz.pietjepuk.net
+      --genesis-beacon-api-url=https://checkpointz.pietjepuk.net
+    networks:
+      infura:
+        ipv4_address: 10.2.0.104
+      
   geth:
     container_name: geth
     restart: unless-stopped
-    image: ethereum/client-go:v1.10.17
+    image: ethereum/client-go:v1.10.25
     logging:
       options:
         max-file: "5"
@@ -21,11 +49,14 @@ services:
       --http 
       --http.addr "0.0.0.0" 
       --http.vhosts "*"
+      --authrpc.jwtsecret /home/geth/geth/jwtsecret 
+      --authrpc.addr "0.0.0.0" 
+      --authrpc.port "8551" 
+      --authrpc.vhosts "*"
       --ws 
       --ws.addr "0.0.0.0" 
       --http.corsdomain "*" 
       --ws.origins "*" 
-      --nousb
       --cache=4096
       --maxpeers=200
       --syncmode=snap

@@ -4,7 +4,7 @@ services:
   geth:
     container_name: geth_ropsten
     restart: unless-stopped
-    image: ethereum/client-go:v1.10.13
+    image: ethereum/client-go:v1.10.18
     logging:
       options:
         max-file: "5"
@@ -17,6 +17,7 @@ services:
     volumes:
       - ${DIR}/testnet/geth:/home/geth
     command: >
+      --ropsten
       --datadir /home/geth 
       --http 
       --http.addr "0.0.0.0" 
@@ -24,14 +25,12 @@ services:
       --http.corsdomain "*" 
       --ws 
       --ws.addr "0.0.0.0" 
-      --ws.origins "*" 
-      --nousb
+      --ws.origins "*"
       --cache=8192
       --maxpeers=200
-      --syncmode=fast
+      --syncmode=snap
       --gpo.percentile=75
-      --ropsten
-      --whitelist 10920274=0xfd652086d220d506ae5b7cb80fde97d2f3f7028d346cc7d9d384a83d3d638532
+      --override.terminaltotaldifficulty "100000000000000000000000"
     networks:
       infura:
         ipv4_address: 10.2.0.101
