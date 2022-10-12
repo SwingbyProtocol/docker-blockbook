@@ -1,0 +1,18 @@
+{
+    "coin_name": "DCN Testnet",
+    "coin_shortcut": "tDCN",
+    "coin_label": "DCN Testnet",
+    "rpc_url": "https://chain.iodevnet.com",
+    "rpc_user": "",
+    "rpc_pass": "",
+    "rpc_timeout": 25,
+    "parse": true,
+    "message_queue_binding": "",
+    "subversion": "",
+    "address_format": "",
+    "mempoolTxTimeoutHours": 12,
+    "queryBackendOnMempoolResync": false,
+    "mempool_workers": 8,
+    "mempool_sub_workers": 2,
+    "block_addresses_to_keep": 2147483647
+}
