@@ -17,7 +17,7 @@ if ! sh -c "service ntp status" > /dev/null; then
 fi
 # Make swap file
 if ! grep -q '/swapfile swap swap defaults 0 0' "/etc/fstab"; then
-    fallocate -l 5G /swapfile
+    fallocate -l 10G /swapfile
     chmod 600 /swapfile
     mkswap /swapfile
     swapon /swapfile
