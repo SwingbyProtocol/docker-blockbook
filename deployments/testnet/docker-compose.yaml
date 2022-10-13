@@ -196,7 +196,7 @@ services:
       - 9030:9030
       - 9130:9130
     volumes:
-      - ${DIR}/testnet/bb_dcn:/opt/coins/blockbook/ethereum_testnet_goerli/data
+      - ${DIR}/testnet/bb_eth:/opt/coins/blockbook/ethereum_testnet_goerli/data
     networks:
       infura:
         ipv4_address: 10.2.0.112

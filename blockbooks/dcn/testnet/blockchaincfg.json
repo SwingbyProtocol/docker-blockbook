@@ -1,7 +1,7 @@
 {
-    "coin_name": "DCN Testnet",
-    "coin_shortcut": "tDCN",
-    "coin_label": "DCN Testnet",
+    "coin_name": "IO Testnet",
+    "coin_shortcut": "tIO",
+    "coin_label": "IO Coin",
     "rpc_url": "https://chain.iodevnet.com",
     "rpc_user": "",
     "rpc_pass": "",
