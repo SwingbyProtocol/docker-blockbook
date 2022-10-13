@@ -199,7 +199,7 @@ services:
       - ${DIR}/testnet/bb_eth:/opt/coins/blockbook/ethereum_testnet_goerli/data
     networks:
       infura:
-        ipv4_address: 10.2.0.112
+        ipv4_address: 10.2.0.114
 
 networks:
   infura:
