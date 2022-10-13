@@ -1,7 +1,7 @@
 {
-    "coin_name": "IO Testnet",
-    "coin_shortcut": "tIO",
-    "coin_label": "IO Coin",
+    "coin_name": "Ethereum Testnet Goerli",
+    "coin_shortcut": "gETH",
+    "coin_label": "Ethereum Goerli",
     "rpc_url": "https://chain.iodevnet.com",
     "rpc_user": "",
     "rpc_pass": "",
