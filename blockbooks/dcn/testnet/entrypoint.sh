@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /opt/coins/blockbook/ethereum_testnet_goerli/
+cd /opt/coins/blockbook/iochain_testnet/
 
 ./bin/blockbook -sync \
     -blockchaincfg=/app/blockchaincfg.json \
@@ -8,6 +8,7 @@ cd /opt/coins/blockbook/ethereum_testnet_goerli/
     -public=:9130 \
     -resyncindexperiod=5000 \
     -resyncmempoolperiod=5000 \
-    -blockheight=600000 \
+    -blockheight=1 \
     -workers=1 \
+    -debug \
     -logtostderr
