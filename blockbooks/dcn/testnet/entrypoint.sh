@@ -11,5 +11,4 @@ cd /opt/coins/blockbook/iochain_testnet/
     -blockheight=30200 \
     -workers=2 \
     -debug=true \
-    -logtostderr \
-    -notxcache=true
+    -logtostderr
