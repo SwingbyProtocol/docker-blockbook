@@ -8,5 +8,6 @@ cd /opt/coins/blockbook/bitcoin/
     -public=:9130 \
     -resyncindexperiod=5000 \
     -resyncmempoolperiod=5000 \
+    -blockheight=761429 \
     -workers=1 \
     -logtostderr
