@@ -28,7 +28,7 @@ services:
       --http.corsdomain "*"
       --ws.origins "*"
       --nousb
-      --cache=8192
+      --cache=4096
       --maxpeers=200
       --syncmode=snap
       --gpo.percentile=75
