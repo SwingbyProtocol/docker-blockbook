@@ -8,6 +8,6 @@ cd /opt/coins/blockbook/bitcoin_testnet/
     -public=:9130 \
     -resyncindexperiod=5000 \
     -resyncmempoolperiod=5000 \
-    -blockheight=2401790 \
+    -blockheight=2419324 \
     -workers=1 \
     -logtostderr

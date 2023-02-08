@@ -28,7 +28,7 @@ services:
       --http.corsdomain "*"
       --ws.origins "*"
       --nousb
-      --cache=4096
+      --cache=8096
       --maxpeers=200
       --syncmode=snap
       --gpo.percentile=75
@@ -59,6 +59,7 @@ services:
       --p2p-host-ip=""
       --p2p-host-dns=""
       --p2p-tcp-port=13000
+      --p2p-max-peers=200
       --jwt-secret=/home/jwtsecret_mainnet.hex
       --grpc-gateway-host="0.0.0.0"
       --grpc-gateway-port=3500
