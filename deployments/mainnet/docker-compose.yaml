@@ -80,7 +80,7 @@ services:
   bitcoind:
     container_name: bitcoind
     restart: unless-stopped
-    image: kylemanna/bitcoind@sha256:17c7dd21690f3be34630db7389d2f0bff14649e27a964afef03806a6d631e0f1
+    image: kylemanna/bitcoind@sha256:b4e1c7e5c3e51557a625c053c875c0ee69f88a51a92f21b6f7b71b0f3cc6f6cc
     logging:
       options:
         max-file: "5"
