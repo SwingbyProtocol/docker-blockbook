@@ -12,9 +12,9 @@ COPY . .
 
 RUN apt-get update -y && apt-get install -y logrotate libsnappy1v5 libzmq5 psmisc
 
-RUN dpkg -i backend-bitcoin-testnet_22.0-satoshilabs-1_amd64.deb
+RUN dpkg -i backend-bitcoin-testnet_24.0.1-satoshilabs-1_amd64.deb
 
-RUN dpkg -i blockbook-bitcoin-testnet_0.3.6_amd64.deb
+RUN dpkg -i blockbook-bitcoin-testnet_0.4.0_amd64.deb
 
 RUN chmod 775 entrypoint.sh
 
