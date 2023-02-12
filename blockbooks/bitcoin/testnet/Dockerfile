@@ -10,7 +10,7 @@ WORKDIR /app
 
 COPY . .
 
-RUN apt-get update -y && apt-get install -y logrotate libsnappy1v5 libzmq5 psmisc
+RUN apt-get update -y && apt-get install -y logrotate libsnappy1v5 libzmq3-dev psmisc
 
 RUN dpkg -i backend-bitcoin-testnet_24.0.1-satoshilabs-1_amd64.deb
 

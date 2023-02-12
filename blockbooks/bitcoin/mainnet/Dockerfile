@@ -1,6 +1,6 @@
 
 # Dockerfile References: https://docs.docker.com/engine/reference/builder/
-FROM ubuntu:20.04
+FROM debian:bullseye-slim
 
 # Add Maintainer Info
 LABEL maintainer="Yusaku Senga <yusaku@swingby.network>"
@@ -10,7 +10,7 @@ WORKDIR /app
 
 COPY . .
 
-RUN apt-get update -y && apt-get install -y logrotate libsnappy1v5 libzmq5 psmisc
+RUN apt-get update -y && apt-get install -y logrotate libsnappy1v5 psmisc libzmq3-dev
 
 RUN dpkg -i backend-bitcoin_24.0.1-satoshilabs-1_amd64.deb
 
