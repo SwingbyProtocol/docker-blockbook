@@ -12,9 +12,9 @@ COPY . .
 
 RUN apt-get update -y && apt-get install -y logrotate libc6 libsnappy1v5 libzmq5
 
-RUN dpkg -i backend-ethereum_1.10.6-576681f2-satoshilabs-1_amd64.deb
+RUN dpkg -i backend-ethereum_1.10.26-e5eb32ac-satoshilabs-1_amd64.deb
 
-RUN dpkg -i blockbook-ethereum_0.3.5_amd64.deb
+RUN dpkg -i blockbook-ethereum_0.4.0_amd64.deb
 
 RUN chmod 775 entrypoint.sh
 
