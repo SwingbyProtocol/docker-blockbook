@@ -1,6 +1,6 @@
 
 # Dockerfile References: https://docs.docker.com/engine/reference/builder/
-FROM ubuntu:20.04
+FROM debian:bullseye-slim
 
 # Add Maintainer Info
 LABEL maintainer="Yusaku Senga <yusaku@swingby.network>"
