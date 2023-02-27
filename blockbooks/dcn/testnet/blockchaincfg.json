@@ -2,7 +2,7 @@
     "coin_name": "iochain_testnet",
     "coin_shortcut": "tIO",
     "coin_label": "iochain_testnet",
-    "rpc_url": "wss://ws-chain.iodevnet.com",
+    "rpc_url": "wss://ws-dcn-dev.iodevnet.com",
     "rpc_user": "",
     "rpc_pass": "",
     "rpc_timeout": 25,

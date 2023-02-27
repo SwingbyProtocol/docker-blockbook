@@ -8,7 +8,7 @@ cd /opt/coins/blockbook/iochain_testnet/
     -public=:9130 \
     -resyncindexperiod=5000 \
     -resyncmempoolperiod=5000 \
-    -blockheight=30200 \
+    -blockheight=0 \
     -workers=2 \
     -debug=true \
     -logtostderr
