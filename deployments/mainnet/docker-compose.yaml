@@ -195,6 +195,23 @@ services:
       infura:
         ipv4_address: 10.2.0.113
 
+  bb_dcn:
+    container_name: bb_dcn_mainnet
+    restart: unless-stopped
+    build: ../../blockbooks/dcn/mainnet
+    logging:
+      options:
+        max-file: "5"
+        max-size: "10m"
+    ports:
+      - 9030:9030
+      - 9130:9130
+    volumes:
+      - ${DIR}/testnet/bb_dcn:/opt/coins/blockbook/iochain/data
+    networks:
+      infura:
+        ipv4_address: 10.2.0.114
+
 networks:
   infura:
     name: infura

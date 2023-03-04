@@ -1,0 +1,19 @@
+{
+    "coin_name": "iochain",
+    "coin_shortcut": "IO",
+    "coin_label": "iochain",
+    "rpc_url": "wss://ws-dcn-dev.iodevnet.com",
+    "rpc_user": "",
+    "rpc_pass": "",
+    "rpc_timeout": 25,
+    "parse": true,
+    "message_queue_binding": "",
+    "subversion": "",
+    "address_format": "",
+    "mempoolTxTimeoutHours": 12,
+    "queryBackendOnMempoolResync": false,
+    "mempool_workers": 8,
+    "mempool_sub_workers": 2,
+    "block_addresses_to_keep": 2147483647,
+    "privacy_group_id": ""
+}
