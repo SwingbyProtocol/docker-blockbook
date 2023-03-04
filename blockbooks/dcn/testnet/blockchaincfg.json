@@ -14,5 +14,6 @@
     "queryBackendOnMempoolResync": false,
     "mempool_workers": 8,
     "mempool_sub_workers": 2,
-    "block_addresses_to_keep": 2147483647
+    "block_addresses_to_keep": 2147483647,
+    "privacy_group_id": "m9ciLCcFoKtQCg+2EXTsqlmkOylGZoqzmtigO53JhYk="
 }
