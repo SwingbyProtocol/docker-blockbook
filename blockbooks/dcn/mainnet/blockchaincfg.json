@@ -15,5 +15,5 @@
     "mempool_workers": 8,
     "mempool_sub_workers": 2,
     "block_addresses_to_keep": 2147483647,
-    "privacy_group_id": ""
+    "privacy_group_id": "+qFmtQ8+uUjuIDp4Wc+/XlsHkzn5Krp7tF1k9cg3TWY="
 }
