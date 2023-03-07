@@ -14,7 +14,7 @@ RUN apt-get update -y && apt-get install -y logrotate libc6 libsnappy1v5 libzmq5
 
 RUN dpkg -i backend-iochain_1.10.21-67109427-satoshilabs-1_amd64.deb
 
-RUN dpkg -i blockbook-iochain_0.3.6_amd64.deb
+RUN dpkg -i blockbook-iochain_0.4.0_amd64.deb
 
 RUN chmod 775 entrypoint.sh
 
