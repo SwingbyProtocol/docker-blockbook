@@ -4,7 +4,7 @@ services:
   prysm:
     container_name: prysm
     restart: unless-stopped
-    image: gcr.io/prysmaticlabs/prysm/beacon-chain:stable
+    image: gcr.io/prysmaticlabs/prysm/beacon-chain:v4.0.2
     logging:
       options:
         max-file: "5"
@@ -23,8 +23,8 @@ services:
       --grpc-gateway-host=0.0.0.0
       --monitoring-host=0.0.0.0
       --execution-endpoint=http://10.2.0.101:8551
-      --checkpoint-sync-url=https://checkpointz.pietjepuk.net
-      --genesis-beacon-api-url=https://checkpointz.pietjepuk.net
+      --checkpoint-sync-url=https://mainnet-checkpoint-sync.stakely.io
+      --genesis-beacon-api-url=https://mainnet-checkpoint-sync.stakely.io
     networks:
       infura:
         ipv4_address: 10.2.0.104
@@ -32,7 +32,7 @@ services:
   geth:
     container_name: geth
     restart: unless-stopped
-    image: ethereum/client-go:v1.10.25
+    image: ethereum/client-go:v1.11.5
     logging:
       options:
         max-file: "5"
