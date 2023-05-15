@@ -4,7 +4,7 @@ services:
   prysm:
     container_name: prysm
     restart: unless-stopped
-    image: gcr.io/prysmaticlabs/prysm/beacon-chain:v4.0.2
+    image: gcr.io/prysmaticlabs/prysm/beacon-chain:v4.0.4
     logging:
       options:
         max-file: "5"
